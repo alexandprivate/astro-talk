@@ -1,0 +1,9 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<li class="py-3 bg-gray-100 inline-block px-6">{title}</li>

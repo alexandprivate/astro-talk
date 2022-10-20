@@ -1,0 +1,18 @@
+---
+import Navigation from '../layouts/Layout.astro';
+import ListElement from '../components/ListElement.astro';
+
+const getTodos = async () => {
+  try {
+    return await fetch('https://jsonplaceholder.typicode.com/todos').then((res) => res.json());
+  } catch (error) {}
+};
+
+const data = await getTodos();
+---
+
+<Navigation>
+  <ul class="flex flex-col gap-3">
+    {data.map((i: any) => <ListElement title={i.title} />)}
+  </ul>
+</Navigation>
