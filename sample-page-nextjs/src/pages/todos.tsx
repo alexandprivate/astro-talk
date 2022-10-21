@@ -8,11 +8,11 @@ const ListElement: React.FC<{ title: string }> = ({ title }) => (
 
 const todos: NextPage = () => {
   const [data, setData] = useState([]);
+
   const getTodos = useCallback(async () => {
-    try {
-      const d = await fetch('https://jsonplaceholder.typicode.com/todos').then((res) => res.json());
-      setData(d);
-    } catch (error) {}
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos');
+    const responseData = await response.json();
+    setData(responseData);
   }, []);
 
   useEffect(() => {
