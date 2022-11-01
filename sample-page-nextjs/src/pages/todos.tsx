@@ -1,10 +1,7 @@
 import { NextPage } from 'next';
 import React from 'react';
 import { useEffect, useCallback, useState } from 'react';
-
-const ListElement: React.FC<{ title: string }> = ({ title }) => (
-  <li className="py-3 bg-gray-100 inline-block px-6">{title}</li>
-);
+import { ListElement } from '../components/ListElement';
 
 const todos: NextPage = () => {
   const [data, setData] = useState([]);
